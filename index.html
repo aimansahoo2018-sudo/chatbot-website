@@ -1,13 +1,81 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Florence Flower Shop Chatbot</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .card {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #cbd5e1;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 10px;
+      padding: 8px 14px;
+      border-radius: 30px;
+      border: 1px solid #334155;
+      background: rgba(255,255,255,0.08);
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Welcome to Florence 🌸</h1>
+    <p>Chat with our smart assistant using the chat icon at the bottom right.</p>
+
+    <div>
+      <span class="tag">🌼 Flower Recommendations</span>
+      <span class="tag">⏰ Store Hours</span>
+      <span class="tag">🤖 AI Powered</span>
+    </div>
+  </div>
+
+  <!-- ✅ YOUR WATSON CHATBOT SCRIPT BELOW -->
+
+  <script>
   window.watsonAssistantChatOptions = {
-    integrationID: "731a5732-b90a-48c3-9405-5a34f92f3264", // The ID of this integration.
-    region: "au-syd", // The region your integration is hosted in.
-    serviceInstanceID: "6577cda5-2d34-4b5d-941a-5944fa2e5e2f", // The ID of your service instance.
+    integrationID: "731a5732-b90a-48c3-9405-5a34f92f3264",
+    region: "au-syd",
+    serviceInstanceID: "6577cda5-2d34-4b5d-941a-5944fa25e2f",
     onLoad: async (instance) => { await instance.render(); }
   };
   setTimeout(function(){
     const t=document.createElement('script');
-    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+    (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+    "/WatsonAssistantChatEntry.js";
     document.head.appendChild(t);
   });
-</script>
+  </script>
+
+</body>
+</html>
