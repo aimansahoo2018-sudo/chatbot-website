@@ -1,346 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Florence Blooms Florals</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>adorned. fierce. blooms. | floral atelier</title>
+  <!-- elegant serif & sans-serif pairing -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --rose:#d77a86;
-      --rose-dark:#c86471;
-      --cream:#fff7f7;
-      --ink:#2b2b2b;
-      --card:#ffffffcc;
-      --shadow: 0 20px 60px rgba(0,0,0,.12);
-      --radius: 22px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--ink);
-      background: linear-gradient(180deg, #fff, var(--cream));
-    }
-
-    /* Top bar */
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:10;
-      background: linear-gradient(90deg, rgba(215,122,134,.92), rgba(215,122,134,.82));
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,.25);
-    }
-    .topbar-inner{
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 14px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      color:#fff;
-      font-weight:700;
-      letter-spacing:.2px;
-    }
-    .brand .logo{
-      width:28px;height:28px;
-      border-radius:10px;
-      background: rgba(255,255,255,.25);
-      display:grid;place-items:center;
-      box-shadow: 0 6px 18px rgba(0,0,0,.12);
-      font-size:16px;
-    }
-    nav a{
-      color:#fff;
-      text-decoration:none;
-      font-weight:600;
-      font-size:14px;
-      opacity:.95;
-      padding: 8px 10px;
-      border-radius: 10px;
-    }
-    nav a:hover{background: rgba(255,255,255,.18)}
-    nav{
-      display:flex;
-      gap:6px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
-    /* Hero */
-    .wrap{max-width:1100px;margin:0 auto;padding: 26px 18px 70px;}
-    .hero{
-      position:relative;
-      overflow:hidden;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      min-height: 420px;
-      display:grid;
-      align-items:stretch;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,.70) 40%, rgba(255,255,255,.25) 100%),
-        url("images/hero.jpg");
-      background-size: cover;
-      background-position: center;
-    }
-    .hero-inner{
-      padding: 48px 44px;
-      max-width: 560px;
-    }
-    .hero h1{
-      font-family: "Playfair Display", serif;
-      font-size: 60px;
-      line-height: 1.02;
-      margin: 0 0 14px;
-      letter-spacing: .2px;
-    }
-    .hero h1 span{
-      display:inline-block;
-      background: rgba(215,122,134,.85);
-      color:#fff;
-      padding: 8px 14px;
-      border-radius: 16px;
-      margin: 4px 0;
-      box-shadow: 0 10px 25px rgba(215,122,134,.25);
-    }
-    .hero p{
-      margin: 12px 0 22px;
-      font-size: 15.5px;
-      line-height: 1.6;
-      max-width: 520px;
-    }
-    .btns{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      border:0;
-      cursor:pointer;
-      font-weight:700;
-      border-radius: 999px;
-      padding: 12px 18px;
-      font-size: 14px;
-      transition:.15s transform ease, .15s opacity ease;
-    }
-    .btn:hover{transform: translateY(-1px)}
-    .btn-primary{
-      background: var(--rose-dark);
-      color:#fff;
-      box-shadow: 0 14px 30px rgba(200,100,113,.25);
-    }
-    .btn-ghost{
-      background: rgba(255,255,255,.8);
-      color: var(--ink);
-      border: 1px solid rgba(0,0,0,.06);
-    }
-
-    /* Sections */
-    .section{
-      margin-top: 34px;
-      background: #fff;
-      border: 1px solid rgba(0,0,0,.06);
-      border-radius: var(--radius);
-      box-shadow: 0 16px 40px rgba(0,0,0,.06);
-      overflow:hidden;
-    }
-    .section-header{
-      text-align:center;
-      padding: 28px 18px 10px;
-    }
-    .section-header h2{
-      font-family: "Playfair Display", serif;
-      margin: 0 0 6px;
-      font-size: 34px;
-      color: var(--rose-dark);
-    }
-    .section-header p{
+    * {
       margin: 0;
-      color: rgba(0,0,0,.62);
-      font-size: 13.5px;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      padding: 18px;
-    }
-    .card{
-      background:#fff;
-      border: 1px solid rgba(0,0,0,.06);
-      border-radius: 18px;
-      overflow:hidden;
-      box-shadow: 0 10px 26px rgba(0,0,0,.06);
-    }
-    .card img{
-      width:100%;
-      height: 210px;
-      object-fit: cover;
-      display:block;
-    }
-    .card .cap{
-      padding: 12px 14px;
-      font-weight:700;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .banner{
-      margin: 0 18px 18px;
-      background: var(--rose);
-      color:#fff;
-      border-radius: 18px;
-      padding: 18px;
-      text-align:center;
-      font-weight:700;
+    body {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #fef8f3 0%, #fceae3 100%);
+      font-family: 'Work Sans', sans-serif;
+      color: #2f2a27;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      line-height: 1.5;
+      /* soft floral whisper background – pure css */
+      background-image: radial-gradient(circle at 10% 20%, rgba(255, 225, 210, 0.3) 0%, transparent 30%),
+                        radial-gradient(circle at 90% 70%, rgba(210, 170, 150, 0.2) 0%, transparent 40%);
     }
 
-    footer{
-      text-align:center;
-      padding: 18px;
-      color: rgba(0,0,0,.55);
-      font-size: 13px;
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background: rgba(255, 250, 245, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 48px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 20px 40px -12px rgba(90, 50, 35, 0.2),
+                  inset 0 1px 2px rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 245, 235, 0.6);
+      text-align: center;
     }
 
-    @media (max-width: 900px){
-      .hero-inner{padding: 36px 22px}
-      .hero h1{font-size: 44px}
-      .grid{grid-template-columns: 1fr}
-      .card img{height: 230px}
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 15vw, 6.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .word {
+      display: block;
+    }
+
+    .word:nth-child(1) {
+      color: #b16f5b;  /* warm terracotta */
+      transform: translateX(-5px);
+    }
+    .word:nth-child(2) {
+      color: #9d786a;  /* dusty rose */
+      transform: translateX(3px);
+    }
+    .word:nth-child(3) {
+      color: #6d4f43;  /* deep cacao */
+      transform: translateX(-2px);
+    }
+
+    .subtitle {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: #4a3d37;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      border-bottom: 1px dashed #d9c0b4;
+      padding-bottom: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .chat-prompt {
+      display: inline-block;
+      background: #f3e1d8;
+      color: #4d342b;
+      font-size: 1rem;
+      font-weight: 400;
+      padding: 0.7rem 1.8rem;
+      border-radius: 60px;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 6px 14px rgba(140, 85, 65, 0.08);
+      border: 1px solid #f1d6cb;
+      backdrop-filter: blur(4px);
+    }
+
+    .chat-prompt span {
+      font-size: 1.2rem;
+      margin-left: 6px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 0.9rem 2.8rem;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: 2px solid transparent;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 18px -6px rgba(100, 60, 40, 0.2);
+    }
+
+    .btn-primary {
+      background: #b77863;
+      color: white;
+      border-color: #b77863;
+    }
+
+    .btn-primary:hover {
+      background: #9b5f4b;
+      border-color: #9b5f4b;
+      transform: scale(1.02);
+      box-shadow: 0 14px 24px -8px #b27a68;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: #b77863;
+      color: #b77863;
+    }
+
+    .btn-secondary:hover {
+      background: #b77863;
+      color: white;
+      transform: scale(1.02);
+    }
+
+    .signature-note {
+      font-size: 0.9rem;
+      color: #a48d82;
+      margin-top: 2rem;
+      letter-spacing: 1px;
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .signature-note::before,
+    .signature-note::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: #dcc5ba;
+    }
+
+    /* make sure watson assistant icon doesn't overlap content weirdly */
+    @media (max-width: 600px) {
+      .container {
+        padding: 2rem 1.5rem;
+      }
+      .subtitle {
+        font-size: 1.2rem;
+      }
+      .btn {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+        width: 100%;
+        max-width: 280px;
+      }
     }
   </style>
-</head>
 
-<body>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <div class="logo">🌸</div>
-        <div>Florence Blooms Florals</div>
-      </div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#daily">Daily Flowers</a>
-        <a href="#wedding">Wedding</a>
-        <a href="#recommendation">Recommendation</a>
-      </nav>
-    </div>
-  </div>
-
-  <main class="wrap" id="home">
-    <section class="hero" aria-label="Hero">
-      <div class="hero-inner">
-        <h1>
-          <span>adorned.</span><br/>
-          <span>fierce.</span><br/>
-          <span>blooms.</span>
-        </h1>
-        <p>
-          Elegant floral arrangements for daily moments and special events.<br/>
-          Need help choosing? Click the chat icon at the bottom-right to talk with our AI assistant 💬
-        </p>
-        <div class="btns">
-          <button class="btn btn-primary" onclick="document.getElementById('daily').scrollIntoView({behavior:'smooth'})">Order Flowers</button>
-          <button class="btn btn-ghost" onclick="document.getElementById('wedding').scrollIntoView({behavior:'smooth'})">Wedding Collections</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="daily">
-      <div class="section-header">
-        <h2>Daily Flower Collections</h2>
-        <p>Fresh arrangements for pickup or delivery.</p>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <img src="images/daily1.jpg" alt="Daily flowers 1">
-          <div class="cap">Order Flowers</div>
-        </div>
-        <div class="card">
-          <img src="images/daily2.jpg" alt="Daily flowers 2">
-          <div class="cap">Daily Dreams</div>
-        </div>
-        <div class="card">
-          <img src="images/daily3.jpg" alt="Daily flowers 3">
-          <div class="cap">Rose Varieties</div>
-        </div>
-      </div>
-
-      <div class="banner">
-        The gesture of giving flowers is a symbol of love, respect, and admiration.
-      </div>
-    </section>
-
-    <section class="section" id="wedding">
-      <div class="section-header">
-        <h2>Wedding Collections</h2>
-        <p>From full-scale floral installations to intimate elegant bouquets.</p>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <img src="images/wedding1.jpg" alt="Wedding collection 1">
-          <div class="cap">Learn More</div>
-        </div>
-        <div class="card">
-          <img src="images/wedding2.jpg" alt="Wedding collection 2">
-          <div class="cap">Bridal Bouquet</div>
-        </div>
-        <div class="card">
-          <img src="images/wedding3.jpg" alt="Wedding collection 3">
-          <div class="cap">Floral Installations</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="recommendation">
-      <div class="section-header">
-        <h2>Recommendations</h2>
-        <p>Ask our assistant for flower suggestions by occasion.</p>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <img src="images/rec1.jpg" alt="Recommendation 1">
-          <div class="cap">Ceremony Decor</div>
-        </div>
-        <div class="card">
-          <img src="images/rec2.jpg" alt="Recommendation 2">
-          <div class="cap">Reception Centerpieces</div>
-        </div>
-        <div class="card">
-          <img src="images/rec3.jpg" alt="Recommendation 3">
-          <div class="cap">Gift Bouquets</div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © Florence Blooms Florals • Powered by Watson Assistant
-    </footer>
-  </main>
-
-  <!-- ✅ Watson Assistant Script (PASTE EXACTLY HERE, before </body>) -->
+  <!-- ========== WATSON ASSISTANT CHATBOT SCRIPT (ACTIVE) ========== -->
   <script>
     window.watsonAssistantChatOptions = {
-      integrationID: "731a5732-b90a-48c3-9405-5a34f92f3264",
-      region: "au-syd",
-      serviceInstanceID: "6577cda5-2d34-4b5d-941a-5944fa2e5e2f",
+      integrationID: "731a5732-b90a-48c3-9405-5a34f92f3264", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "6577cda5-2d34-4b5d-941a-5944fa2e5e2f", // The ID of your service instance.
       onLoad: async (instance) => { await instance.render(); }
     };
     setTimeout(function(){
       const t=document.createElement('script');
-      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
-        (window.watsonAssistantChatOptions.clientVersion || 'latest') +
-        "/WatsonAssistantChatEntry.js";
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
       document.head.appendChild(t);
     });
   </script>
+  <!-- ========== CHATBOT SCRIPT END ========== -->
+</head>
+<body>
+  <div class="container">
+    <h1>
+      <span class="word">adorned.</span>
+      <span class="word">fierce.</span>
+      <span class="word">blooms.</span>
+    </h1>
+
+    <div class="subtitle">
+      Elegant floral arrangements for daily moments and special events.
+    </div>
+
+    <div class="chat-prompt">
+      💬 Need help choosing? Click the chat icon at the bottom-right to talk with our AI assistant 🎉
+    </div>
+
+    <div class="button-group">
+      <a href="#" class="btn btn-primary">Order Flowers</a>
+      <a href="#" class="btn btn-secondary">Wedding Collections</a>
+    </div>
+
+    <div class="signature-note">
+      fresh from the greenhouse — crafted with intention
+    </div>
+  </div>
+
+  <!-- subtle hint that chatbot is active (the script above injects the bubble) -->
+  <!-- no extra code needed, watson assistant will appear as a floating icon -->
 </body>
 </html>
