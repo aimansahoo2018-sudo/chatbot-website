@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Florence | AI Flower Assistant</title>
+<title>Florence | Flower Assistant</title>
 
 <style>
 body{
   margin:0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#fff1f2,#ffe4e6);
   height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  color:white;
+  color:#7f1d1d;
 }
 
 .container{
@@ -22,21 +22,21 @@ body{
   max-width:900px;
   padding:60px;
   border-radius:25px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+  background:white;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
   text-align:center;
+  position:relative;
 }
 
 h1{
-  font-size:42px;
+  font-size:40px;
   margin-bottom:15px;
-  letter-spacing:1px;
+  color:#be123c;
 }
 
 p{
   font-size:18px;
-  color:#d1d5db;
+  color:#9f1239;
   margin-bottom:35px;
 }
 
@@ -48,27 +48,42 @@ p{
 }
 
 .btn{
-  padding:12px 22px;
+  padding:12px 24px;
   border-radius:30px;
-  border:1px solid rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.12);
+  border:none;
+  background:#fda4af;
   color:white;
   font-size:15px;
   cursor:pointer;
-  transition: all 0.3s ease;
+  transition:0.3s;
 }
 
 .btn:hover{
-  background:#3b82f6;
-  border-color:#3b82f6;
+  background:#f43f5e;
   transform:translateY(-3px);
-  box-shadow:0 10px 25px rgba(59,130,246,0.5);
+  box-shadow:0 10px 25px rgba(244,63,94,0.4);
+}
+
+.flower-left{
+  position:absolute;
+  top:-40px;
+  left:-40px;
+  font-size:80px;
+  opacity:0.2;
+}
+
+.flower-right{
+  position:absolute;
+  bottom:-40px;
+  right:-40px;
+  font-size:80px;
+  opacity:0.2;
 }
 
 .footer{
   margin-top:30px;
   font-size:13px;
-  color:#9ca3af;
+  color:#9f1239;
 }
 </style>
 </head>
@@ -76,8 +91,11 @@ p{
 <body>
 
 <div class="container">
-  <h1>Welcome to Florence 🌸</h1>
-  <p>Your professional AI flower assistant.  
+  <div class="flower-left">🌸</div>
+  <div class="flower-right">🌺</div>
+
+  <h1>Welcome to Florence 🌷</h1>
+  <p>Your elegant AI flower assistant.  
      Click the chat icon at the bottom right to begin.</p>
 
   <div class="buttons">
@@ -91,7 +109,7 @@ p{
   </div>
 </div>
 
-<!-- ✅ KEEP YOUR WATSON CHAT SCRIPT BELOW -->
+<!-- Watson Chat Script -->
 
 <script>
 window.watsonAssistantChatOptions = {
