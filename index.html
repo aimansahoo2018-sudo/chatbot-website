@@ -1,81 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Florence Flower Shop Chatbot</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florence | AI Flower Assistant</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
 
-    .card {
-      max-width: 800px;
-      margin: auto;
-      background: rgba(255,255,255,0.05);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    }
+.container{
+  width:90%;
+  max-width:900px;
+  padding:60px;
+  border-radius:25px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+  text-align:center;
+}
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+h1{
+  font-size:42px;
+  margin-bottom:15px;
+  letter-spacing:1px;
+}
 
-    p {
-      font-size: 18px;
-      color: #cbd5e1;
-    }
+p{
+  font-size:18px;
+  color:#d1d5db;
+  margin-bottom:35px;
+}
 
-    .tag {
-      display: inline-block;
-      margin: 10px;
-      padding: 8px 14px;
-      border-radius: 30px;
-      border: 1px solid #334155;
-      background: rgba(255,255,255,0.08);
-      font-size: 14px;
-    }
-  </style>
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:12px 22px;
+  border-radius:30px;
+  border:1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.12);
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover{
+  background:#3b82f6;
+  border-color:#3b82f6;
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(59,130,246,0.5);
+}
+
+.footer{
+  margin-top:30px;
+  font-size:13px;
+  color:#9ca3af;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
-    <h1>Welcome to Florence 🌸</h1>
-    <p>Chat with our smart assistant using the chat icon at the bottom right.</p>
+<div class="container">
+  <h1>Welcome to Florence 🌸</h1>
+  <p>Your professional AI flower assistant.  
+     Click the chat icon at the bottom right to begin.</p>
 
-    <div>
-      <span class="tag">🌼 Flower Recommendations</span>
-      <span class="tag">⏰ Store Hours</span>
-      <span class="tag">🤖 AI Powered</span>
-    </div>
+  <div class="buttons">
+    <div class="btn">Store Hours</div>
+    <div class="btn">Flower Recommendations</div>
+    <div class="btn">AI Powered</div>
   </div>
 
-  <!-- ✅ YOUR WATSON CHATBOT SCRIPT BELOW -->
+  <div class="footer">
+    Powered by IBM watsonx Assistant
+  </div>
+</div>
 
-  <script>
-  window.watsonAssistantChatOptions = {
-    integrationID: "731a5732-b90a-48c3-9405-5a34f92f3264",
-    region: "au-syd",
-    serviceInstanceID: "6577cda5-2d34-4b5d-941a-5944fa25e2f",
-    onLoad: async (instance) => { await instance.render(); }
-  };
-  setTimeout(function(){
-    const t=document.createElement('script');
-    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
-    (window.watsonAssistantChatOptions.clientVersion || 'latest') +
-    "/WatsonAssistantChatEntry.js";
-    document.head.appendChild(t);
-  });
-  </script>
+<!-- ✅ KEEP YOUR WATSON CHAT SCRIPT BELOW -->
+
+<script>
+window.watsonAssistantChatOptions = {
+  integrationID: "731a5732-b90a-48c3-9405-5a34f92f3264",
+  region: "au-syd",
+  serviceInstanceID: "6577cda5-2d34-4b5d-941a-5944fa25e2f",
+  onLoad: async (instance) => { await instance.render(); }
+};
+setTimeout(function(){
+  const t=document.createElement('script');
+  t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+  (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+  "/WatsonAssistantChatEntry.js";
+  document.head.appendChild(t);
+});
+</script>
 
 </body>
 </html>
